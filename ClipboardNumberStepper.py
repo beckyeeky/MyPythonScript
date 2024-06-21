@@ -1,12 +1,11 @@
-# ClipboardNumberStepper.py
-# 这个脚本用于修改剪贴板中的数字，每次步进1，直到剪贴板中的数字达到用户指定的终点值时停止。
-# Custom Unicode字符保留原样。
 # pip install pyperclip
+# ClipboardNumberStepper.py
+# 这个脚本用于修改剪贴板中的数字，每次步进1，用户粘贴后继续步进，直到剪贴板中的数字达到用户指定的终点值时停止。
+# Custom Unicode字符保留原样。
 
 # 导入所需的库
 import pyperclip
 import re
-import time
 
 # 定义一个函数来步进数字
 def increment_numbers_in_clipboard(target_value):
@@ -52,8 +51,8 @@ def increment_numbers_in_clipboard(target_value):
             print(f"数字已经变成{target_value}，停止步进。")
             return
 
-        # 延迟一秒钟，以便于观察变化
-        time.sleep(1)
+        # 提示用户进行粘贴操作并等待确认
+        input("请按Ctrl+V进行粘贴，然后按回车键继续...")
 
 if __name__ == "__main__":
     # 获取用户指定的终点值
