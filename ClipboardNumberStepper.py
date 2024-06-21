@@ -44,7 +44,6 @@ def increment_numbers_in_clipboard(target_value):
             # 如果步进后的数字等于目标值，则停止
             if incremented_number == target_value:
                 reached_target = True
-                break
 
         # 如果已经达到了目标值，则退出循环
         if reached_target:
